@@ -1,0 +1,42 @@
+{
+  "name": "<%= appDirectory %>",
+  "version": "0.1.0",
+  "authors": [
+    "Grant Klinsing <grant@digitalopera.com>"
+  ],
+  "license": "MIT",
+  "homepage": "http://digitalopera.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "exportsOverride": {
+    "angular": {
+      "": "angular.min.{js,js.map}"
+    }<% if(useJQuery) { %>,
+    "jquery": {
+      "": "dist/jquery.min.{js,map}"
+    }<% } %><% if(useFoundation) { %>,
+    "foundation": {
+      "": "{css/*.css,css/*.css.map,js/foundation.min.js}"
+    },
+    "modernizr": {
+      "": "modernizr.js"
+    }<% } %><% if(useScheming) { %>,
+    "scheming": {
+      "": "dest/Scheming.{js,js.map}"
+    }<% } %>
+  },
+  "dependencies": {
+    "angular": "~1.3.10"<% if(useFoundation) { %>,
+    "foundation": "zurb/bower-foundation#~5.5.1"<% } %><% if(useJQuery) { %>,
+    "jquery": "~2.1.3"<% } %><% if(useNormalize) { %>,
+    "normalize.css": "~3.0.2"<% } %><% if(useScheming) { %>,
+    "scheming": "~1.0.0"<% } %>
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.13"
+  }
+}
