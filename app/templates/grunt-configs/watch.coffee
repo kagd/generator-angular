@@ -18,6 +18,12 @@ module.exports = (grunt, options) ->
         'injector:buildCss'
       ]
 
+    buildCoffee:
+      files: [
+        "#{options.paths.source.js}/**/*.coffee"
+      ]
+      tasks: [ 'coffee:build' ]
+
     buildHtml:
       files: [
         "#{options.paths.source.root}/**/*.html"
