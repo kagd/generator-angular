@@ -13,7 +13,7 @@ module.exports = (grunt, options) ->
       expand: true
       ext: '.js'
       flatten: true
-      src: ['*.coffee']
+      src: ['**/*.coffee']
       sourceMap: true
 
     dist:
