@@ -27,9 +27,20 @@ module.exports = (grunt, options) ->
     buildHtml:
       files: [
         "#{options.paths.source.root}/**/*.html"
+        "!#{options.paths.source.root}/index.html"
       ]
       tasks: [
         'copy:build'
+      ]
+
+    buildHtmlIndex:
+      files: [
+        "#{options.paths.source.root}/index.html"
+      ]
+      tasks: [
+        'copy:build'
+        'injector:buildCss'
+        'injector:buildJs'
       ]
 
     build:
