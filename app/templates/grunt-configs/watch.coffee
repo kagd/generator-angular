@@ -18,6 +18,14 @@ module.exports = (grunt, options) ->
         'injector:buildCss'
       ]
 
+    buildHtml:
+      files: [
+        "#{options.paths.source.root}/**/*.html"
+      ]
+      tasks: [
+        'copy:build'
+      ]
+
     build:
       options:
         livereload: options.connect.build
