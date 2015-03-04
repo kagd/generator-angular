@@ -5,7 +5,7 @@ module.exports = (grunt, options) ->
   return {
     buildJs:
       files: [
-        "#{options.paths.source.js}/**/*.js"
+        "#{options.paths.build.js}/**/*.js"
       ]
       tasks: [ 'injector:buildJs' ]
 
